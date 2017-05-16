@@ -13,11 +13,11 @@
 
        config = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
 
-       options[:upload_folder] = config['upload_folder']
        options[:name_folder] = config['name_folder']
        options[:username] = config['username']
        options[:password] = config['password']
 
+       options[:upload_folder] = nil
        opts.on( '-f', '--folder UPLOAD_FOLDER', 'Specifies folder where all files are uploaded - not required if specified in config.yml' ) do |upload_folder|
          options[:upload_folder] = upload_folder
        end
@@ -43,12 +43,13 @@
        end
      end
 
+     files = optparse.parse!.uniq
+
      if options.has_value? nil
-       puts 'WARNING MISSING CONFIG. Please include a folder, full name, username and password in either config.yml or as a command line arguement?'
-       exit
+       puts 'WARNING MISSING CONFIG. Please include a folder, full name, username and password in either config.yml or as a command line argument'
+       #exit
      end
 
-     files = optparse.parse!.uniq
      # Include whole folder
      if files.include? '.'
        files = files + Dir.entries(".")
