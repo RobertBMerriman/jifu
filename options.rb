@@ -1,4 +1,3 @@
-# A script that will pretend to resize a number of images
  require 'optparse'
  require 'yaml'
 
@@ -18,7 +17,7 @@
        options[:password] = config['password']
 
        options[:upload_folder] = nil
-       opts.on( '-f', '--folder UPLOAD_FOLDER', 'Specifies folder where all files are uploaded - not required if specified in config.yml' ) do |upload_folder|
+       opts.on( '-f', '--folder UPLOAD_FOLDER', 'Specifies folder where all files are uploaded - REQUIRED' ) do |upload_folder|
          options[:upload_folder] = upload_folder
        end
 
@@ -30,7 +29,7 @@
          options[:username] = username
        end
 
-       opts.on( '-u', '--password PASSWORD', 'Specifies login password - not required if specified in config.yml' ) do |password|
+       opts.on( '-p', '--password PASSWORD', 'Specifies login password - not required if specified in config.yml' ) do |password|
          options[:password] = password
        end
 

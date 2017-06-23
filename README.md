@@ -21,4 +21,4 @@ When running jifu you will need to specify all the files you wish to upload and 
 
 #### Usage example
 
-`ruby jifu.rb -f 2017-04-Apr screenshot.png screenshot-2.png some-document.docx`
+`ruby jifu.rb --folder 2017-04-Apr screenshot.png screenshot-2.png some-document.docx`
