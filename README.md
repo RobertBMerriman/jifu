@@ -14,10 +14,13 @@ This is required for the automated browser operation done by this script.
 
 Then, clone this repo into a folder of your choice and run `bundle install` in said folder.
 
+(If you don't have `bundler` you can install it with `gem install bundler`)
+
 
 ### To run
 
 When running jifu you will need to specify all the files you wish to upload and specify the folder under 'Evidence Portfolio' that you want to upload to.
+
 
 #### Usage example
 
