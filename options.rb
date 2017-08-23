@@ -6,8 +6,7 @@
      options = {}
 
      optparse = OptionParser.new do |opts|
-       # Set a banner, displayed at the top
-       # of the help screen.
+       # Set a banner, displayed at the top of the help screen.
        opts.banner = "Usage: jifu [-f UPLOAD_FOLDER, -n NAME_FOLDER, -u USERNAME, -p PASSWORD] file1 file2 ..."
 
        config = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
@@ -33,8 +32,7 @@
          options[:password] = password
        end
 
-       # This displays the help screen, all programs are
-       # assumed to have this option.
+       # This displays the help screen, all programs are assumed to have this option.
        opts.on( '-h', '--help', 'Display this screen' ) do
          puts opts
          puts "\nNote: specifying `.` will use all files in the current folder"

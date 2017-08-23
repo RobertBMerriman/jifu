@@ -21,7 +21,10 @@ end
 puts 'Will upload: ' + evidence_paths.map { |path| path.split('/').last }.join(', ')
 
 # Begin script
-browser = Watir::Browser.new :chrome
+profile = Selenium::WebDriver::Chrome::Profile.new
+profile['webkit.webprefs.loads_images_automatically'] = false
+
+browser = Watir::Browser.new :chrome,  :profile => profile
 
 # Login
 browser.goto 'https://justit.itslearning.com/'
